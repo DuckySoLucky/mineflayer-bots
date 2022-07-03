@@ -1,0 +1,7 @@
+{
+    "host": "IP",
+    "port": "PORT",
+    "username": "email@example.com",
+    "password": "PASSWORD",
+    "auth": "microsoft"
+}

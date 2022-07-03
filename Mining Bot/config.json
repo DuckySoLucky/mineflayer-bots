@@ -1,0 +1,8 @@
+{
+    "host": "SERVER_IP",
+    "port": "PORT",
+    "username": "email@example.com",
+    "password": "PASSWORD",
+    "auth": "microsoft",
+    "radius": 4
+}

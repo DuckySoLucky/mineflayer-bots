@@ -1,0 +1,11 @@
+{
+    "host": "IP",
+    "port": "PORT",
+    "username": "email@example.com",
+    "password": "PASSWORD",
+    "auth": "microsoft",
+
+    "locateBlock": "emerald_block",
+    "distance": "256",
+    "count": "5"
+}
