@@ -77,6 +77,8 @@ bot.on('forcedMove', async () => {
 })
 
 async function dig() {
+    mineflayerViewer(bot, { port: 3000 })
+    mineflayerViewer(bot, { firstPerson: true, port: 3001 })
     if (!capcha) {
         if (bot.world.getBlock(bot.entity.position.offset(0, -1, 0)).name == 'hopper') {
             if (!bot.heldItem || bot.heldItem.nbt.value.Damage.value > 1500) {
