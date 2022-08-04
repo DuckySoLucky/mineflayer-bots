@@ -51,7 +51,7 @@ bot.on('message', async (msg) => {
                 setInterval(async () => {
                     if (bot.world.getBlock(bot.entity.position.offset(-1, 0, 0)).name == 'oak_trapdoor') await bot.look(180, Math.PI/2, false)
                     else if (bot.world.getBlock(bot.entity.position.offset(1, 0, 0)).name == 'glass') await bot.look(90, Math.PI/2, false)
-                }, 1)
+                }, await delay(getRandomInt(1, 100)))
             } else {
                 console.log('Minecraft > An Error has Occurred: Block below me is not a hopper')
             }
@@ -65,12 +65,12 @@ bot.on('forcedMove', async () => {
     forcedMove++
     if (forcedMove > 1) {
         console.log('Discord > Bot has been teleported')
-        await delay(900)
+        await delay(getRandomInt(500, 100))
         bot.setControlState('forward', false)
         const target = bot.nearestEntity(entity => entity.name.toLowerCase() === 'player')
         target.position.y+=2
         await bot.lookAt(target.position, false)
-        await delay(4900)
+        await delay(getRandomInt(4000, 5000))
         bot.chat('bro wtf this is like 10th time today im done with this server')
         client.send({ content: '@everyone', embeds: [ forceTeleport ]})
     }
@@ -106,12 +106,12 @@ async function dig() {
             }  
         } else {
             console.log('Discord > Bot has been teleported')
-            await delay(900)
+            await delay(getRandomInt(500, 100))
             bot.setControlState('forward', false)
             const target = bot.nearestEntity(entity => entity.name.toLowerCase() === 'player')
             target.position.y+=2
             await bot.lookAt(target.position, false)
-            await delay(4900)
+            await delay(getRandomInt(4000, 5000))
             bot.chat('bro wtf this is like 10th time today im done with this server')
             client.send({ content: '@everyone', embeds: [ forceTeleport ]})
         }
